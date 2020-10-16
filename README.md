@@ -1,7 +1,7 @@
 # DesertedBot
 This bot Has 5 public commands:
 
-- dm -
+-- dm -
 Type Command Like:
   !dm @(mention the user you want to dm) (your message here)
 This will send a dm as a discord bot
