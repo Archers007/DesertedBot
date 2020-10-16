@@ -1,5 +1,5 @@
 # DesertedBot
-This bot Has 5 public commands:
+This bot Has 7 public commands:
 
 - dm                                                                                                                                                                
 Type Command Like:                                                                                                                                                   
