@@ -1,5 +1,6 @@
 import discord
 import os
+import random
 from discord.ext import commands
 
 class TarekInsult(commands.Cog):
@@ -11,7 +12,10 @@ class TarekInsult(commands.Cog):
     async def on_ready(self):
         print('TarekInsult Cog is Running')
     
-    Insult = [
+    
+    @commands.command()
+    async def rank(self, ctx):
+        Insult = [
         
         '<@!363735258279051265> u suck',
         '<@!363735258279051265> hahahhahhahaahhahahha ur not #1',
@@ -21,14 +25,11 @@ class TarekInsult(commands.Cog):
         
         
         ]
-    
-    @commands.command()
-    async def rank(ctx):
         response = random.choice(Insult)
         await ctx.channel.send(response)
     
     @commands.command()
-    async def AddInsult(ctx, *args):
+    async def AddInsult(self, ctx, *args):
         if args:
             Insult.append(' '.join(args))
             print(Insult)

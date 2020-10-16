@@ -8,7 +8,7 @@ from discord import Status
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN2')
 
-client = commands.Bot(command_prefix='*')
+client = commands.Bot(command_prefix='!')
 
 extensionsrun = [
 
@@ -73,9 +73,9 @@ class RunningInfo():
         else:
             embeded.add_field(name="Meme Generator: On", value='Memes' in extensionsrun)
         if 'TarekRankInsult' in extensionsrun:
-            embeded.add_field(name="Tarek Insult: On", value='Memes' in extensionsrun)
+            embeded.add_field(name="Tarek Insult: On", value='TarekRankInsult' in extensionsrun)
         else:
-            embeded.add_field(name="Tarek Insult: On", value='Memes' in extensionsrun)
+            embeded.add_field(name="Tarek Insult: On", value='TarekRankInsult' in extensionsrun)
 
         await ctx.channel.send(embed=embeded)
 
