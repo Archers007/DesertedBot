@@ -30,4 +30,4 @@ def setup(client):
     client.add_cog(UserInfo(client))
     
 def teardown(client):
-    print('UserInfo Cog is now not running, AKA: Cog3')
+    print('UserInfo Cog is now not running')
