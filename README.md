@@ -1,6 +1,8 @@
 # DesertedBot
 This bot Has Many public commands:
 
+Invite link: [HERE](https://discord.com/api/oauth2/authorize?client_id=763422049871331339&permissions=8&scope=bot)
+
 #### **Dm**
 Type Command Like:
 >>*!dm* @(mention the user you want to dm) (your message here)
