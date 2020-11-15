@@ -1,4 +1,8 @@
-FROM python:3.7-alpine
+FROM python:3.9-alpine
+ENV PYTHONUNBUFFERED 1
+#RUN pip install --upgrade pip setuptools wheel
+#RUN pip install discord
+RUN apk --no-cache add gcc musl-dev
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

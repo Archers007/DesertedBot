@@ -27,6 +27,11 @@ class AutoReact(commands.Cog):
                 print(channel_list)
                 print(emojii)
     
+    @commands.command()
+    async def removeReact(self, ctx):
+        emojii.pop(0)
+        channel_list.pop(0)
+    
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.channel.id in channel_list:
