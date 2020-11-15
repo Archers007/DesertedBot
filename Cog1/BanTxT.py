@@ -31,6 +31,10 @@ class Deleter(commands.Cog):
         if ctx.author not in deleteUser:
             deleteUser.remove(user.id)
     
+    @commands.command()
+    async def Ban?(self, ctx):
+        await ctx.channel.send(deleteUser)
+    
 
 def setup(client):
     client.add_cog(Deleter(client))
