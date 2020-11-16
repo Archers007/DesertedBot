@@ -32,7 +32,7 @@ class Deleter(commands.Cog):
             deleteUser.remove(user.id)
     
     @commands.command()
-    async def Ban?(self, ctx):
+    async def BanHelp(self, ctx):
         await ctx.channel.send(deleteUser)
     
 
