@@ -19,15 +19,16 @@ UTban will let select user to text again\
 
 #### **Spam**
 Type Command Like:
->>*!Spamdm* @(mention the user to spam) (message to spam)\
->>*!Spam* (message to spam)
+>>*!Spamdm* (Amount of times to spam) @(mention the user to spam) (message to spam)\
+>>*!Spam* (Amount of times to spam) (message to spam)\
 
 Spamdm will spam only 1 person with the message you provided\
 Spam will spam that channel with provided message\
 
 #### **AutoReact**
 Type Command Like:
->>*!addreact* (the emoji you want to auto react)
+>>*!addreact* (the emoji you want to auto react)\
+>>*!removeReact*
 
 This will automatically react to messages in that channel with provided emoji\
 
@@ -35,7 +36,7 @@ This will automatically react to messages in that channel with provided emoji\
 Type Command Like:
 >>*!meme*
 
-This will terribly generate a random meme\
+This will generate a random meme\
 
 #### **ServerInfo**
 Type Command Like:
@@ -70,3 +71,10 @@ Type Command Like:
 >>*!ChangeCP* (what you want to change command prefix to)
 
 A command prefix is the ! at the beginning of every command. This command will change the command prefix\
+
+#### **Dog and Cat**
+Type Command Like:
+>>*!Dog* (Shows you dog)
+>>*!Cat* (Shows you cat)
+
+Showes cute animals ig\
