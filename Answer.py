@@ -1,1 +1,0 @@
-z = '="https://imgflip.com/i/3az9y5'
