@@ -3,6 +3,7 @@ import os
 import random
 import requests
 from discord.ext import commands
+import time
 
 class Memes(commands.Cog):
     
@@ -17,33 +18,8 @@ class Memes(commands.Cog):
         
     @commands.command(pass_context=True)
     async def meme(self, ctx):
-        f = open("LookFor.txt", "w")
-        f.write('\n')
-        f.close()
-        
-        
-        url = "https://imgflip.com/i"
-        x = requests.get(url, headers = {"HTTP_HOST": "MyVeryOwnHost"})
-        
-        f = open("LookFor.txt", "w")
-        f.write(x.text)
-        f.close()
-        
-        
-        file1 = open('LookFor.txt', 'r')
-        Lines = file1.readlines()
-        
-        count = 0
-        
-        for line in Lines:
-            count += 1
-            
-            if count == 58:
-                print(line)
-                z = line[-33:-5]
-        print(z)
-        
-        await ctx.channel.send(z)
+        seconds = time.time()
+        await ctx.channel.send("https://imgflip.com/i?{}".format(str(seconds)))
         
     
 def setup(client):
