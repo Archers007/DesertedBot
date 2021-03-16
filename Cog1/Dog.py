@@ -23,5 +23,12 @@ class Dog(commands.Cog):
 
         seconds = time.time()
         print("Seconds since epoch =", seconds)
+
+        await ctx.channel.send("https://www.randomdoggiegenerator.com/randomdoggie.php?{}" .format(str(seconds)))
+    
+    
+def setup(client):
+    client.add_cog(Dog(client))
+    
 def teardown(client):
     print('Dog Cog is now not running')
