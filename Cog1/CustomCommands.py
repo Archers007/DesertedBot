@@ -13,24 +13,9 @@ class CustomComands(commands.Cog):
         print('Custom commands Cog Is A Go')
     
     @commands.command()
-    async def joining(self, ctx):
-        await ctx.message.delete()
-        await ctx.channel.send('hey guys {} is going to join u guys in a moment or two'.format(ctx.author.nick))
-    
-    @commands.command()
-    async def booting(self, ctx):
-        await ctx.message.delete()
-        await ctx.channel.send('hey guys {} is booting up so leave him alone'.format(ctx.author.nick))
-        
-    @commands.command()
-    async def no(self, ctx):
-        await ctx.message.delete()
-        await ctx.channel.send('hey guys {} is not going to join you guys rn'.format(ctx.author.nick))
-    
-    @commands.command()
     async def status(self, ctx, member: Member):
         await ctx.message.delete()
-        await ctx.channel.send('{} is playing {}'.format(member, member.Game))
+        await ctx.channel.send('{} is playing {}'.format(member, member.ActivityName))
 
 def setup(client):
     client.add_cog(CustomComands(client))

@@ -18,26 +18,10 @@ Message1 = []
 Message2 = []
 unloaded = []
 extensionsrun = []
-hole = []
-hole1 = []
-hole2 = []
-hole3 = []
-hole4 = []
-hole5 = []
-hole6 = []
-hole7 = []
-hole8 = []
-hole9 = []
-hole0 = []
-hole11 = []
-hole12 = []
-hole13 = []
-hole14 = []
-hole15 = []
-hole16 = []
-hole17 = []
-hole18 = []
-hole19 = []
+inven = []
+recipients = []
+rolls = []
+
 
 
 
@@ -149,6 +133,25 @@ async def ResetCP(ctx):
     CP.append('!')
     CP.pop(0)
     await ctx.channel.send('Successfully Reset Command Prefix to !')
+
+@client.command()
+async def help(ctx):
+    embeded = discord.Embed(title="Help Menu", description='List of Commands', color=0xbf00ff)
+    embeded.add_field(name="'''!addreact (emoji)'''", value= str)
+    embeded.add_field(name="'''!removeReact'''", value= str)
+    embeded.add_field(name="'''!Tban (***Admin ONLY***)'''", value= str)
+    embeded.add_field(name="'''!UTban (***Admin ONLY***)'''", value= str)
+    embeded.add_field(name="'''!BanTxT (***Admin ONLY***)'''", value= str)
+    embeded.add_field(name="'''!Info (**User**)'''", value= str)
+    embeded.add_field(name="'''!serverinfo'''", value= str)
+    embeded.add_field(name="'''!Cat'''", value= str)
+    embeded.add_field(name="'''!Dog'''", value= str)
+    embeded.add_field(name="'''!meme'''", value= str)
+    embeded.add_field(name="'''!Spam (*Amount of times spammed, message*)'''", value= str)
+    embeded.add_field(name="'''!Spamdm (*Amount of times to spam, user to spam, message*)'''", value= str)
+    embeded.add_field(name="'''!dm (*User to dm, Message to send*)'''", value= str)
+    embeded.add_field(name="'''!Confide (*message to confide*)'''", value= str)
+    await ctx.channel.send(embed=embeded)
 
 class RunningInfo():
     @client.command()

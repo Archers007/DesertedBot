@@ -1,6 +1,7 @@
 import discord
 import os
 import random
+import requests
 from discord.ext import commands
 
 class Memes(commands.Cog):
@@ -16,82 +17,34 @@ class Memes(commands.Cog):
         
     @commands.command(pass_context=True)
     async def meme(self, ctx):
-        rl1 = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        't',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-        ]
-    
-        rl2 = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        't',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-        ]
-            
-        rn1 = [
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
-        '8',
-        '9',
-        '0',
+        f = open("LookFor.txt", "w")
+        f.write('\n')
+        f.close()
         
-        ]
+        
+        url = "https://imgflip.com/i"
+        x = requests.get(url, headers = {"HTTP_HOST": "MyVeryOwnHost"})
+        
+        f = open("LookFor.txt", "w")
+        f.write(x.text)
+        f.close()
+        
+        
+        file1 = open('LookFor.txt', 'r')
+        Lines = file1.readlines()
+        
+        count = 0
+        
+        for line in Lines:
+            count += 1
             
-        rl3 = random.choice(rl1)
-        rl4 = random.choice(rl2)
-        rn2 = random.choice(rn1)
-        await ctx.channel.send('https://imgflip.com/i/4hy{}{}{}'.format(rl3, rl4, rn2,))
+            if count == 58:
+                print(line)
+                z = line[-33:-5]
+        print(z)
+        
+        await ctx.channel.send(z)
+        
     
 def setup(client):
     client.add_cog(Memes(client))

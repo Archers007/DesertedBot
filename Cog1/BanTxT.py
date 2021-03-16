@@ -28,7 +28,7 @@ class Deleter(commands.Cog):
     
     @commands.command()
     async def UTban(self, ctx, user: discord.User):
-        if ctx.author not in deleteUser:
+        if ctx.author.id not in deleteUser:
             deleteUser.remove(user.id)
     
     @commands.command()
