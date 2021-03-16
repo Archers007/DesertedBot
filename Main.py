@@ -137,6 +137,7 @@ async def ResetCP(ctx):
 @client.command()
 async def help(ctx):
     embeded = discord.Embed(title="Help Menu", description='List of Commands', color=0xbf00ff)
+    embeded.add_field(name="Want to Invite me to your server [Click here](https://discord.com/api/oauth2/authorize?client_id=763422049871331339&permissions=8&scope=bot) :thumbsup: you should also check out my GIT account [Here](https://github.com/Archers007)")
     embeded.add_field(name="'''!addreact (emoji)'''", value= str)
     embeded.add_field(name="'''!removeReact'''", value= str)
     embeded.add_field(name="'''!Tban (***Admin ONLY***)'''", value= str)
