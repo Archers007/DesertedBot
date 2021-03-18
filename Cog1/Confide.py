@@ -18,10 +18,12 @@ class confide(commands.Cog):
     @commands.command(pass_context=True)
     async def confide(self, ctx, *, args):
         await ctx.message.delete()
-        f = open(".Confide", "x")
-        f = open(".Confide", "a")
-        f.write('{} has confided this message: {}\n'.format(ctx.author.name, args))
-        f.close()
+        try:
+            f = open(".Confide", "x")
+        try:
+            f = open(".Confide", "a")
+            f.write('{} has confided this message: {}\n'.format(ctx.author.name, args))
+            f.close()
         
         await ctx.channel.send("{} your message has been confided in me".format(ctx.author.name))
         
