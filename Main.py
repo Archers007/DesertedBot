@@ -4,6 +4,8 @@ import random
 from discord.ext import commands
 from dotenv import load_dotenv
 from discord import Status
+import shutil
+import time
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN2')
@@ -178,8 +180,17 @@ class RunningInfo():
         await ctx.channel.send('╱┃┃┃┃┃━┫━━┫┃━┫╭┫┃┃┃━┫╭╮┃┃┃╱┃┣╮╭┻╮╭╋┫╭━╋┫╭╮┃┃')
         await ctx.channel.send('╭╯╰╯┃┃━╋━━┃┃━┫┃┃╰┫┃━┫╰╯┃┃╰━╯┃┃┃╱┃┃┃┃╰━┫┃╭╮┃╰╮')
         await ctx.channel.send('╰━━━┻━━┻━━┻━━┻╯╰━┻━━┻━━╯╰━━━╯╰╯╱╰╯╰┻━━┻┻╯╰┻━╯')
-
-
+    
+    @client.event
+    async def on_message(message):
+        try:
+            try:
+            f = open(".log", "x")
+        try:
+            f = open(".log", "a")
+            seconds = time.time()
+            f.write('{} said this message: {} at {} epoch\n'.format(message.author.name, message.content, seconds))
+            
 
 @client.event
 async def on_ready():
@@ -221,3 +232,6 @@ async def on_ready():
 
     
 client.run(TOKEN)
+
+def teardown(client):
+    print('Main Cog is now not running')
